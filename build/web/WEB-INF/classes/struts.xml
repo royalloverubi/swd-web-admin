@@ -1,0 +1,65 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="">
+            <result>login.jsp</result>
+        </action>
+        <action name="login" class="lamtt.action.LoginAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyber</param>
+            </result>
+            <result name="fail">login.jsp</result>
+        </action>
+        <action name="cyber" class="lamtt.action.CyberAction">
+            <result name="success">cyber.jsp</result>
+        </action>
+        
+        <action name="approve" class="lamtt.action.ApproveAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyber</param>
+            </result>
+        </action>
+        <action name="logout" class="lamtt.action.LogoutAction">
+            <result name="success">
+                login.jsp
+            </result>
+        </action>
+        <action name="cyberInfo" class="lamtt.action.CyberInfoAction">
+            <result name="success">cyberinfo.jsp</result>
+        </action>
+        <action name="deleteRoom" class="lamtt.action.DeleteRoomAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyberInfo</param>
+            </result>
+        </action>
+        <action name="updateRoom" class="lamtt.action.UpdateRoomAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyberInfo</param>
+            </result>
+        </action>
+        <action name="insertRoom" class="lamtt.action.InsertRoomAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyberInfo</param>
+            </result>
+        </action>
+        <action name="updateConfig" class="lamtt.action.UpdateConfigAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyberInfo</param>
+            </result>
+        </action>
+        <action name="deleteConfig" class="lamtt.action.DeleteConfigAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyberInfo</param>
+            </result>
+        </action>
+        <action name="insertConfig" class="lamtt.action.InsertConfigAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">cyberInfo</param>
+            </result>
+        </action>
+    </package>
+</struts>
